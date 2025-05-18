@@ -80,7 +80,7 @@ function Editor() {
                 <Button onClick={() => setDarkMode(!darkMode)} className={style}>{darkMode ? <MoonIcon /> : <SunIcon />}</Button>
             </div>
 
-            <BlockNote doc={doc} provider={provider} darkMode={darkMode} />
+            <BlockNote doc={doc!} provider={provider} darkMode={darkMode} />
         </div>
     )
 }
