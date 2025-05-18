@@ -9,6 +9,7 @@ import { useDocumentData } from 'react-firebase-hooks/firestore';
 import Editor from './Editor';
 import useOwner from '@/lib/useOwner';
 import DeleteDocument from './DeleteDocument';
+import InviteUser from './InviteUser';
 
 function Document({ id }: { id: string }) {
     const [data, loading, error] = useDocumentData(doc(db, "documents", id))
@@ -44,7 +45,13 @@ function Document({ id }: { id: string }) {
                         onChange={(e) => setInput(e.target.value)}
                     />
                     <Button disabled={isUpdating} type="submit">{isUpdating ? "Updating" : "Update"}</Button>
-                    {isOwner && <DeleteDocument/>}
+
+                    {isOwner && (
+                        <>
+                            <InviteUser />
+                            <DeleteDocument />
+                        </>
+                    )}
                 </form>
             </div>
 
@@ -53,7 +60,7 @@ function Document({ id }: { id: string }) {
 
             <hr className='pb-10' />
 
-            <Editor/>
+            <Editor />
         </div>
     )
 }
