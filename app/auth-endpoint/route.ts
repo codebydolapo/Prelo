@@ -46,3 +46,8 @@ export async function POST(req: NextRequest) {
         );
     }
 }
+
+
+
+//todo
+//create a redirect if a user is not in a room or unauthorized, shpowing a lottie animation telling them to do so
