@@ -85,10 +85,14 @@ function TranslateDocument({ doc }: { doc: Y.Doc }) {
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <Button asChild variant={"outline"}>
+            {/* <Button asChild variant={"outline"}>
                 <LanguagesIcon />
                 <DialogTrigger>Translate</DialogTrigger>
-            </Button>
+            </Button> */}
+            <div>
+                <LanguagesIcon />
+                <DialogTrigger>Translate</DialogTrigger>
+            </div>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Translate the document?</DialogTitle>
@@ -124,9 +128,12 @@ function TranslateDocument({ doc }: { doc: Y.Doc }) {
                         </SelectContent>
                     </Select>
 
-                    <Button type="submit" disabled={!language || isPending}>
+                    {/* <Button type="submit" disabled={!language || isPending}>
                         {isPending ? "Translating..." : "Translate"}
-                    </Button>
+                    </Button> */}
+                    <button type='submit' disabled={!language || isPending}>
+                        {isPending ? "Translating..." : "Translate"}
+                    </button>
                 </form>
             </DialogContent>
         </Dialog>

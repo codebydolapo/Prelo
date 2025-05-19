@@ -15,11 +15,16 @@ const AuthWrapper = async ({ children}: { children: React.ReactNode;}) => {
 function DocLayout(
     { children }: { children: React.ReactNode;}
 ) {
+    auth.protect(); // Server-side authentication
+
 
     return (
-        <AuthWrapper>
+        // <AuthWrapper>
+        //     {children}
+        // </AuthWrapper>
+         <>
             {children}
-        </AuthWrapper>
+        </>
     );
 }
 

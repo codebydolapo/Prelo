@@ -52,7 +52,7 @@ function Sidebar() {
 
 
 
-    const [data] = useCollection(user && (
+    const [data, ,] = useCollection(user && (
         query(collectionGroup(db, `rooms`), where("userId", "==", userEmail))
     ))
 
@@ -87,7 +87,7 @@ function Sidebar() {
             editor: []
         }
         );
-        console.log(grouped)
+        // console.log(grouped)
         setGroupedData(grouped);
     }, [data]);
 

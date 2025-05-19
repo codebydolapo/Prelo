@@ -8,16 +8,25 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-
-
+import { ClientSideSuspense } from "@liveblocks/react";
 
 function Avatars() {
+    return (
+        <div className="flex gap-2 items-center">
+            <p className="font-light text-sm">Users currently editing this page</p>
+            <ClientSideSuspense fallback={<p>Loading users...</p>}>
+                <AvatarsContent />
+            </ClientSideSuspense>
+        </div>
+    );
+}
+
+function AvatarsContent() {
     const others = useOthers();
     const self = useSelf();
     const all = [self, ...others];
 
-    return <div className="flex gap-2 items-center">
-        <p className="font-light text-sm">Users currently editing this page</p>
+    return (
         <div className="flex -space-5">
             {all.map((other, i) => {
                 return (
@@ -34,10 +43,10 @@ function Avatars() {
                             </TooltipContent>
                         </Tooltip>
                     </TooltipProvider>
-                )
+                );
             })}
         </div>
-    </div>;
+    );
 }
 
 export default Avatars;

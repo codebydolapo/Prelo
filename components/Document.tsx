@@ -14,12 +14,13 @@ import ManageUsers from './ManageUsers';
 import Avatars from './Avatars';
 
 function Document({ id }: { id: string }) {
-    const [data] = useDocumentData(doc(db, "documents", id))
+    const [data, ,] = useDocumentData(doc(db, "documents", id))
     const [input, setInput] = useState("");
     const [isUpdating, startTransition] = useTransition()
     const isOwner = useOwner()
 
     useEffect(() => {
+
         if (data) {
             setInput(data.title)
         }
@@ -57,13 +58,12 @@ function Document({ id }: { id: string }) {
                 </form>
             </div>
 
-
-            <div className='flex max-w-6xl mx-auto justify-between items-center'>
+            <div className='flex max-w-6xl mx-auto justify-between items-center mb-4'>
                 <ManageUsers />
                 <Avatars />
             </div>
 
-            <hr className='pb-10' />
+            <hr className='pb-5' />
 
             <Editor />
         </div>

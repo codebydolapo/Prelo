@@ -16,8 +16,8 @@ import TranslateDocument from './TranslateDocument'
 import ChatToDocument from './ChatToDocument'
 
 type EditorProps = {
-    doc: Y.Doc;
-    provider: LiveblocksYjsProvider;
+    doc: Y.Doc | any;
+    provider: LiveblocksYjsProvider | any;
     darkMode: boolean;
 };
 
@@ -83,7 +83,7 @@ function Editor() {
                 <Button onClick={() => setDarkMode(!darkMode)} className={style}>{darkMode ? <MoonIcon /> : <SunIcon />}</Button>
             </div>
 
-            <BlockNote doc={doc!} provider={provider!} darkMode={darkMode} />
+            <BlockNote doc={doc} provider={provider} darkMode={darkMode} />
         </div>
     )
 }
