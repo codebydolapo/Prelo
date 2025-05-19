@@ -11,7 +11,6 @@ import {
 } from "./ui/dialog"
 import { Button } from './ui/button'
 import { usePathname } from 'next/navigation'
-import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { Input } from './ui/input'
 import { inviteUserToDocument } from '@/actions/actions'

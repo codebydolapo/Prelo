@@ -52,7 +52,7 @@ function Sidebar() {
 
 
 
-    const [data, loading, error] = useCollection(user && (
+    const [data] = useCollection(user && (
         query(collectionGroup(db, `rooms`), where("userId", "==", userEmail))
     ))
 
