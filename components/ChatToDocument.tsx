@@ -3,21 +3,15 @@
 import React, { FormEvent, useState, useTransition } from 'react'
 import {
     Dialog,
-    DialogClose,
     DialogContent,
     DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "./ui/dialog"
 import { Button } from './ui/button'
-import { usePathname } from 'next/navigation'
-import { useRouter } from 'next/navigation'
-import { deleteDocument } from '@/actions/actions'
 import { toast } from 'sonner'
 import { Input } from './ui/input'
-import { inviteUserToDocument } from '@/actions/actions'
 import * as Y from "yjs"
 import { BotIcon, MessageCircleCode } from 'lucide-react'
 import Markdown from 'react-markdown'
@@ -27,12 +21,9 @@ function ChatToDocument({ doc }: { doc: Y.Doc }) {
     const [isOpen, setIsOpen] = useState(false)
     const [input, setInput] = useState("")
     const [summary, setSummary] = useState("")
-    const [message, setMessage] = useState("")
     const [question, setQuestion] = useState("")
     const [isPending, startTransition] = useTransition()
-    const pathname = usePathname()
 
-    const router = useRouter()
 
     const handleAskQuestion = async (e: FormEvent) => {
         e.preventDefault();
@@ -49,7 +40,7 @@ function ChatToDocument({ doc }: { doc: Y.Doc }) {
             );
 
             if (res.ok) {
-                const id = toast.loading("Translating...")
+               toast.loading("Translating...")
 
                 const { message } = await res.json()
                 setInput("")

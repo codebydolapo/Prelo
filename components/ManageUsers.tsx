@@ -1,23 +1,17 @@
 "use client"
 
-import React, { FormEvent, useState, useTransition } from 'react'
+import React, { useState, useTransition } from 'react'
 import {
     Dialog,
-    DialogClose,
     DialogContent,
     DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "./ui/dialog"
 import { Button } from './ui/button'
-import { usePathname } from 'next/navigation'
-import { useRouter } from 'next/navigation'
-import { deleteDocument, removeUserFromDocument } from '@/actions/actions'
+import { removeUserFromDocument } from '@/actions/actions'
 import { toast } from 'sonner'
-import { Input } from './ui/input'
-import { inviteUserToDocument } from '@/actions/actions'
 import { useUser } from '@clerk/nextjs'
 import useOwner from '@/lib/useOwner'
 import { useRoom } from '@liveblocks/react'

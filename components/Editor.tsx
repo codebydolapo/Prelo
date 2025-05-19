@@ -1,7 +1,6 @@
 "use client"
 
 import { useRoom, useSelf } from '@liveblocks/react'
-import { setDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import * as Y from "yjs"
 import { LiveblocksYjsProvider } from "@liveblocks/yjs"
@@ -29,9 +28,9 @@ function BlockNote({ doc, provider, darkMode }: EditorProps) {
         collaboration: {
             provider,
             fragment: doc.getXmlFragment("document-store"),
-            user:{
-                name: userInfo?.name!,
-                color: stringToColor(userInfo?.email!)
+            user: {
+                name: userInfo?.name || "",
+                color: userInfo?.email ? stringToColor(userInfo.email) : ""
             }
         }
     })
@@ -79,8 +78,8 @@ function Editor() {
     return (
         <div className='max-w-6xl mx-auto'>
             <div className='flex items-center gap-2 justify-end mb-10'>
-                <TranslateDocument doc = {doc!}/>
-                <ChatToDocument doc = {doc!}/>
+                <TranslateDocument doc={doc!} />
+                <ChatToDocument doc={doc!} />
                 <Button onClick={() => setDarkMode(!darkMode)} className={style}>{darkMode ? <MoonIcon /> : <SunIcon />}</Button>
             </div>
 

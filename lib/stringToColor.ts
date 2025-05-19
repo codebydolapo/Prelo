@@ -50,7 +50,7 @@ function stringToColor(str: string): string {
  * Helper function to convert hue to RGB.
  */
 function hueToRgb(p: number, q: number, h: number): number {
-    let t = h < 0 ? h + 1 : h > 1 ? h - 1 : h;
+    const t = h < 0 ? h + 1 : h > 1 ? h - 1 : h;
     if (t < 1/6) return p + (q - p) * 6 * t;
     if (t < 1/2) return q;
     if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;

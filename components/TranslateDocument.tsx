@@ -2,13 +2,10 @@
 import React, { useState, useTransition } from 'react'
 import * as Y from "yjs";
 import { Button } from './ui/button';
-import { Input } from './ui/input';
 import {
     Dialog,
-    DialogClose,
     DialogContent,
     DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -52,11 +49,10 @@ const languages: Language[] = [
 function TranslateDocument({ doc }: { doc: Y.Doc }) {
 
     const [isOpen, setIsOpen] = useState(false)
-    const [email, setEmail] = useState("")
     const [isPending, startTransition] = useTransition()
     const [language, setLanguage] = useState("")
     const [summary, setSummary] = useState("")
-    const [question, setQuestion] = useState("")
+    // const [question, setQuestion] = useState("")
 
     const handleAskQuestion = (e: React.FormEvent) => {
         e.preventDefault();
@@ -79,7 +75,6 @@ function TranslateDocument({ doc }: { doc: Y.Doc }) {
             );
 
             if (res.ok) {
-                const id = toast.loading("Translating...")
 
                 const { translated_text } = await res.json()
                 setSummary(translated_text)
@@ -101,7 +96,7 @@ function TranslateDocument({ doc }: { doc: Y.Doc }) {
                         Select a language and AI will translate a summary of the document in your desired language
                     </DialogDescription>
                     <hr className='mt-5' />
-                    {question && <p className='mt-5 text-gray-500'>Q: {question}</p>}
+                    {/* {question && <p className='mt-5 text-gray-500'>Q: {question}</p>} */}
                 </DialogHeader>
                 {summary && (
                     <div className="flex flex-col items-start max-h-96 overflow-y-scroll gap-2 p-5 bg-gray-100">

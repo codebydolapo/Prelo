@@ -25,8 +25,8 @@ interface RoomDocument extends DocumentData {
     owner: {
         push(arg0: {
             createdAt: string; role: "owner" | "editor"; roomId: string; userId: string; data: () => RoomDocument
-            owner: { createdAt: string; role: "owner" | "editor"; roomId: string; userId: string; id: any }; id: any
-        }): unknown; createdAt: string; role: "owner" | "editor"; roomId: string; userId: string; id: any
+            owner: { createdAt: string; role: "owner" | "editor"; roomId: string; userId: string; id: string }; id: string
+        }): unknown; createdAt: string; role: "owner" | "editor"; roomId: string; userId: string; id: string
     }
 }
 
