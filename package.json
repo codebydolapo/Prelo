@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "vercel deploy --prod"
   },
   "dependencies": {
     "@blocknote/core": "^0.30.0",
@@ -50,7 +51,8 @@
     "eslint-config-next": "15.3.2",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.2.9",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^41.7.8"
   },
   "packageManager": "yarn@4.9.1"
 }
