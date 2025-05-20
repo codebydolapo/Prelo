@@ -1,12 +1,12 @@
 "use client"
 
 // import { ArrowLeftCircle } from "lucide-react";
-import animationData from "./lottie_create.json";
+import animationData from "./landing.json";
 import { useLottie } from "lottie-react";
-import { ArrowLeftCircle } from "lucide-react";
-// import { } from "lottie-web";
-import dynamic from 'next/dynamic';
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import Header from "@/components/Header";
+import { ArrowRightIcon } from "lucide-react";
 
 const MyLottieComponent = () => {
   // let animationRef = useRef<AnimationConfigWithPath<"svg"> | AnimationConfigWithData<"svg">>();
@@ -33,7 +33,7 @@ const MyLottieComponent = () => {
   return (
     <>
       <div className="">
-        <div className="w-full" ref={animationRef!}></div>
+        <div className="w-full h-full" ref={animationRef!}></div>
       </div>
     </>
   );
@@ -44,16 +44,23 @@ export default function Home() {
 
 
   return (
-    // <main className="flex space-x-2 items-center justify-start mt-20 h-full flex-col no-scrollbar">
-    //   <MyLottieComponent />
-    //   <div className="flex flex-col items-center justify-around text-center">
-    //     <p className="font-extrabold text-lg text-[#1da1f2] ">Hello there!</p>
-    //     <p className="font-medium text-[#000000be]">Check the sidebar to begin creating or collaborating...</p>
-    //   </div>
-    // </main>
-    <main className="flex space-x-2 items-center animate-pulse">
-      <ArrowLeftCircle className="w-12 h-12" />
-      <h1 className="font-bold">Get started with creating a new document</h1>
+    <main className="w-[100vw] h-[100vh] flex flex-col items-center justify-center no-scrollbar">
+      <div className="w-full">
+        <Header stripped = {true}/>
+      </div>
+      <div className="flex h-full w-full md:px-16 px-2 md:flex-row flex-col-reverse">
+        <div className="md:w-[50%] w-full md:h-full h-[50%] flex flex-col md:items-start items-center justify-center md:space-y-6">
+          <p className="font-extrabold text-[#1da1f2] md:text-3xl text-2xl">Prelo.</p>
+          <p className="font-extrabold text-[#000] md:text-6xl text-3xl md:text-start text-center">Unmatched Productivity At The Palm Of Your Hand...</p>
+          <Link href={"/home"} className="cursor-pointer md:w-[10rem] w-[7rem] md:h-[3rem] h-[2rem] bg-[#1da1f2] text-white md:rounded-lg rounded-sm font-bold flex items-center justify-center mt-6 md:text-normal text-sm">
+            <p>Continue</p>
+            <ArrowRightIcon className="md:size-6 size-4 text-white mx-2"/>
+          </Link>
+        </div>
+        <div className="md:w-[50%] w-full md:h-full h-[50%] flex items-center justify-center">
+          <MyLottieComponent />
+        </div>
+      </div>
     </main>
   );
 }

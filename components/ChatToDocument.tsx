@@ -40,7 +40,7 @@ function ChatToDocument({ doc }: { doc: Y.Doc }) {
             );
 
             if (res.ok) {
-               toast.loading("Translating...")
+                toast.loading("Translating...")
 
                 const { message } = await res.json()
                 setInput("")
@@ -52,12 +52,18 @@ function ChatToDocument({ doc }: { doc: Y.Doc }) {
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <Button asChild variant={"outline"}>
+            {/* <Button asChild variant={"outline"}>
                 <DialogTrigger>
                     <MessageCircleCode className='mr-2' />
                     Chat to document...
                 </DialogTrigger>
-            </Button>
+            </Button> */}
+            <div className='md:px-4 px-2 py-2 flex space-x-2 border-[1px] rounded-lg'>
+                <MessageCircleCode className='mr-2 size-6' />
+                <DialogTrigger>
+                    <p className='md:text-sm text-xs'>Chat to document...</p>
+                </DialogTrigger>
+            </div>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Chat to document</DialogTitle>

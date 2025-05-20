@@ -12,6 +12,7 @@ import DeleteDocument from './DeleteDocument';
 import InviteUser from './InviteUser';
 import ManageUsers from './ManageUsers';
 import Avatars from './Avatars';
+import { toast } from 'sonner';
 
 function Document({ id }: { id: string }) {
     const [data, ,] = useDocumentData(doc(db, "documents", id))
@@ -28,12 +29,18 @@ function Document({ id }: { id: string }) {
 
     const updateTitle = (e: FormEvent) => {
         e.preventDefault()
-        if (input.trim()) {
-            startTransition(async () => {
-                await updateDoc(doc(db, "rooms", id), {
-                    title: input
+        try {
+
+            if (input.trim()) {
+                startTransition(async () => {
+                    await updateDoc(doc(db, "documents", id), {
+                        title: input
+                    })
                 })
-            })
+            }
+        } catch (error) {
+            console.log(error)
+            toast.error("An error occurred while updating the title")
         }
     }
 
@@ -47,7 +54,7 @@ function Document({ id }: { id: string }) {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                     />
-                    <Button disabled={isUpdating} type="submit">{isUpdating ? "Updating" : "Update"}</Button>
+                    <Button disabled={isUpdating} type="submit" className='cursor-pointer'>{isUpdating ? "Updating" : "Update"}</Button>
 
                     {isOwner && (
                         <>

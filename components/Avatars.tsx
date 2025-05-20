@@ -13,8 +13,8 @@ import { ClientSideSuspense } from "@liveblocks/react";
 function Avatars() {
     return (
         <div className="flex gap-2 items-center">
-            <p className="font-light text-sm">Users currently editing this page</p>
-            <ClientSideSuspense fallback={<p>Loading users...</p>}>
+            <p className="font-light md:text-sm text-xs md:visible hidden">Users currently editing this page</p>
+            <ClientSideSuspense fallback={<p className="font-light md:text-sm text-xs">Loading users...</p>}>
                 <AvatarsContent />
             </ClientSideSuspense>
         </div>
@@ -27,14 +27,14 @@ function AvatarsContent() {
     const all = [self, ...others];
 
     return (
-        <div className="flex -space-5">
+        <div className="flex -space-x-5">
             {all.map((other, i) => {
                 return (
                     <TooltipProvider key={other?.id + i}>
                         <Tooltip>
                             <TooltipTrigger>
-                                <Avatar className="border-2 hover:z-50">
-                                    <AvatarImage src={other?.info.avatar} />
+                                <Avatar className="hover:z-50 border-2 border-black">
+                                    <AvatarImage src={other?.info.avatar} className=""/>
                                     <AvatarFallback>{other?.info.name}</AvatarFallback>
                                 </Avatar>
                             </TooltipTrigger>

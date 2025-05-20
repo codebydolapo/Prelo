@@ -89,9 +89,9 @@ function TranslateDocument({ doc }: { doc: Y.Doc }) {
                 <LanguagesIcon />
                 <DialogTrigger>Translate</DialogTrigger>
             </Button> */}
-            <div>
-                <LanguagesIcon />
-                <DialogTrigger>Translate</DialogTrigger>
+            <div className='px-4 py-2 flex space-x-2 border-[1px] rounded-lg'>
+                <LanguagesIcon className='mr-2 size-6' />
+                <DialogTrigger><p className='text-sm'>Translate</p></DialogTrigger>
             </div>
             <DialogContent>
                 <DialogHeader>

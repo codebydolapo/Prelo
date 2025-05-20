@@ -6,6 +6,7 @@ import Sidebar from "@/components/Sidebar";
 import { Toaster } from "@/components/ui/sonner"
 import { Poppins } from 'next/font/google'
 
+
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', "800", "900"]
@@ -21,21 +22,20 @@ export default function RootLayout({
 }: {children: React.ReactNode}) {
   return (
     <ClerkProvider>
+
       <html lang="en"
       className={poppins.className}
       >
         <head />
         <body
         >
-          <Header />
-          <div className="flex min-h-screen ">
-            <Sidebar />
-            <div className="flex-1 p-4 bg-gray-100 overflow-y-auto scrollbar-hide">
+          
+          <div className="flex min-h-screen max-w-screen ">
+            <div className="flex flex-1 items-center justify-center scrollbar-hide max-w-[100vw]">
               {children}
             </div>
 
           </div>
-          <Toaster position="top-center"/>
         </body>
       </html>
     </ClerkProvider>

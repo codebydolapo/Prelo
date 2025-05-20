@@ -43,7 +43,7 @@ function InviteUser() {
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <Button asChild variant={"outline"}>
+            <Button asChild variant={"outline"} className='cursor-pointer'>
                 <DialogTrigger>Invite</DialogTrigger>
             </Button>
             <DialogContent>

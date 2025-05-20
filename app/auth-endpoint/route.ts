@@ -4,8 +4,8 @@ import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
+  await auth.protect(); // Server-side authentication
   try {
-    await auth.protect(); // Server-side authentication
     const { sessionClaims } = await auth();
 
     const { room } = await req.json();

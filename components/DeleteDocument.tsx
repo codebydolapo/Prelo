@@ -43,7 +43,7 @@ function DeleteDocument() {
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <Button asChild variant={"destructive"}>
+            <Button asChild variant={"destructive"} className='cursor-pointer'>
                 <DialogTrigger>Delete</DialogTrigger>
             </Button>
             <DialogContent>
