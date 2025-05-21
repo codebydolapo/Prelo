@@ -25,7 +25,7 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                             ?
                             <div className='flex space-x-2 items-center justify-center'>
                                 <Link href="/">
-                                    <Image alt="" src="/icons/prelo_logo.jpg" width={0} height={0} className='rounded-full size-8 cover' />
+                                    <Image alt="" src="/icons/prelo_logo.jpg" width={0} height={0} className='rounded-full size-8' />
                                 </Link>
                                 <div className=''>
                                     <h1 className='text-xs capitalize text-white font-semibold'>Hello,</h1>
@@ -35,11 +35,11 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                             :
                             <div className='flex space-x-2'>
                                 <Link href="/">
-                                    <Image alt="" src="/icons/prelo_logo.jpg" width={45} height={45} className='rounded-full' />
+                                    <Image alt="" src="/icons/prelo_logo.jpg" width={45} height={45} className='rounded-full size-8' />
                                 </Link>
                                 <div className=''>
                                     <h1 className='text-xs capitalize text-white font-semibold'>Hello,</h1>
-                                    <h1 className='text-xl capitalize text-[#1DA1F2] font-semibold tracking-wider'>Guest</h1>
+                                    <h1 className='md:text-xl capitalize text-[#1DA1F2] font-extrabold tracking-wider'>Guest</h1>
                                 </div>
                             </div>
                     }
@@ -65,7 +65,7 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
 
                     <div className='mr-5'>
                         <SignedOut>
-                            <div className='bg-[#1da1f2] px-4 py-2 rounded-lg text-white font-semibold'>
+                            <div className='bg-[#1da1f2] px-4 py-2 rounded-lg text-white md:text-sm text-xs font-semibold'>
                                 <SignInButton />
                             </div>
                         </SignedOut>
