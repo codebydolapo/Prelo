@@ -23,7 +23,7 @@ export default function HomeLayout({
 
     // <ClerkProvider>
     <div className="flex flex-col w-screen scrollbar-hide">
-      <Header stripped={false} />
+      <Header stripped={false} page = {"/"} />
       <div className="flex min-h-[92vh] ">
         <Sidebar />
         <div className="flex-1 md:p-4 bg-gray-100 overflow-y-auto scrollbar-hide">

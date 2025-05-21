@@ -4,8 +4,8 @@ import { useRoom, useSelf } from '@liveblocks/react'
 import React, { useEffect, useState } from 'react'
 import * as Y from "yjs"
 import { LiveblocksYjsProvider } from "@liveblocks/yjs"
-import { Button } from './ui/button'
-import { MoonIcon, SunIcon } from 'lucide-react'
+// import { Button } from './ui/button'
+// import { MoonIcon, SunIcon } from 'lucide-react'
 import { BlockNoteView } from "@blocknote/shadcn"
 import { BlockNoteEditor } from "@blocknote/core"
 import { useCreateBlockNote } from "@blocknote/react";

@@ -165,9 +165,7 @@ function Sidebar() {
 
 
     return (
-        <LiveBlocksProvider>
-
-            <RoomProvider id={params.id} initialPresence={{ cursor: null }}>
+        
 
                 <div className='pl-0 p-2 md:p-5 md:pr-2 md:pl-2 flex flex-col justify-start items-start bg-white'>
                     <div className='md:hidden'>
@@ -187,8 +185,7 @@ function Sidebar() {
                         {menuOptions}
                     </div>
                 </div>
-            </RoomProvider>
-        </LiveBlocksProvider>
+           
 
     )
 }

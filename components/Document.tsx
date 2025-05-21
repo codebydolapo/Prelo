@@ -57,15 +57,15 @@ function Document({ id }: { id: string }) {
                     <Button disabled={isUpdating} type="submit" className='cursor-pointer'>{isUpdating ? "Updating" : "Update"}</Button>
 
                     {isOwner && (
-                        <>
+                        <div className = "md:flex hidden">
                             <InviteUser />
                             <DeleteDocument />
-                        </>
+                        </div>
                     )}
                 </form>
             </div>
 
-            <div className='flex max-w-6xl mx-auto justify-between items-center mb-4'>
+            <div className=' max-w-6xl mx-auto flex justify-between items-center mb-4'>
                 <ManageUsers />
                 <Avatars />
             </div>

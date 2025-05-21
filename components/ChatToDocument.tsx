@@ -58,7 +58,7 @@ function ChatToDocument({ doc }: { doc: Y.Doc }) {
                     Chat to document...
                 </DialogTrigger>
             </Button> */}
-            <div className='md:px-4 px-2 py-2 flex space-x-2 border-[1px] rounded-lg'>
+            <div className='md:px-4 px-2 py-2 flex space-x-2 border-2 border-[#991df2] font-bold text-gray-700 rounded-lg'>
                 <MessageCircleCode className='mr-2 size-6' />
                 <DialogTrigger>
                     <p className='md:text-sm text-xs'>Chat to document...</p>

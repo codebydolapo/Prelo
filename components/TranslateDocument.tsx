@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useTransition } from 'react'
 import * as Y from "yjs";
-import { Button } from './ui/button';
 import {
     Dialog,
     DialogContent,
@@ -89,7 +88,7 @@ function TranslateDocument({ doc }: { doc: Y.Doc }) {
                 <LanguagesIcon />
                 <DialogTrigger>Translate</DialogTrigger>
             </Button> */}
-            <div className='px-4 py-2 flex space-x-2 border-[1px] rounded-lg'>
+            <div className='px-4 py-2 flex space-x-2 rounded-lg bg-[#991df2] text-white font-bold'>
                 <LanguagesIcon className='mr-2 size-6' />
                 <DialogTrigger><p className='text-sm'>Translate</p></DialogTrigger>
             </div>

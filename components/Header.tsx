@@ -1,21 +1,27 @@
 "use client"
 
 import { SignInButton, UserButton, useUser } from '@clerk/nextjs'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SignedIn, SignedOut } from '@clerk/nextjs'
-import Breadcrumbs from './Breadcrumbs'
+// import Breadcrumbs from './Breadcrumbs'
 import Image from 'next/image'
-import { MoveRightIcon, ArrowRightIcon } from "lucide-react";
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 
-function Header({ stripped }: { stripped: boolean }) {
+function Header({ stripped, page }: { stripped: boolean, page: string }) {
     const { user } = useUser()
+
+    const pathName = usePathname()
+
+    // useEffect(() => {
+    //     console.log(page, pathName)
+    // },)
 
 
     return (
         <div className={`flex items-center justify-between ${stripped ? "bg-white" : "bg-black"} md:px-5 xs:px-3 py-3`}>
-            {!stripped
+            {page !== "landing"
                 ?
                 <div className='flex items-center justify-between w-full md:px-0 px-2'>
                     {
@@ -43,12 +49,22 @@ function Header({ stripped }: { stripped: boolean }) {
                     }
 
                     {/* <Breadcrumbs /> */}
-                    <div className='flex items-center justfy-around '>
-                        <p className="px-2 py-2 mx-4 cursor-pointer hover:border-b-3 hover:border-b-[#fff] text-white font-bold" >Home</p>
-                        <p className="px-2 py-2 mx-4 border-b-3 border-b-[#1da1f2] cursor-pointer text-white font-bold" >Editor</p>
-                        <p className="px-2 py-2 mx-4 cursor-pointer hover:border-b-3 hover:border-b-[#fff] text-white font-bold" >Docs</p>
-                        <p className="px-2 py-2 mx-4 cursor-pointer hover:border-b-3 hover:border-b-[#fff] text-white font-bold" >Pricing</p>
-                        <p className="px-2 py-2 mx-4 cursor-pointer hover:border-b-3 hover:border-b-[#fff] text-white font-bold" >Contact us</p>
+                    <div className='items-center justfy-around md:flex hidden'>
+                        <Link href="/">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer text-white font-bold ${pathName.includes("/") && page == "landing" ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#fff] hover:border-b-3"} `} >Home</p>
+                        </Link>
+                        <Link href="/home">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer hover:border-b-3 text-white font-bold ${pathName.includes("/home") ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#fff]"} `} >Editor</p>
+                        </Link>
+                        <Link href="">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer text-white font-bold ${pathName.includes("github") ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#fff] hover:border-b-3"} `} >Docs</p>
+                        </Link>
+                        <Link href="/pricing">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer hover:border-b-3 text-white font-bold ${pathName.includes("pricing") ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#fff]"} `}>Pricing</p>
+                        </Link>
+                        <Link href="">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer text-white font-bold ${pathName.includes("t.me") ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#fff] hover:border-b-3"} `} >Contact us</p>
+                        </Link>
                     </div>
 
                     <div className='mr-5'>
@@ -68,11 +84,21 @@ function Header({ stripped }: { stripped: boolean }) {
                         <Image alt="" src="/icons/prelo_logo.jpg" width={30} height={30} className='rounded-full md:size-8 size-6' />
                     </Link>
                     <div className='flex items-center justfy-around '>
-                        <p className="px-2 py-2 mx-4 border-b-3 border-b-[#1da1f2] cursor-pointer" >Home</p>
-                        <p className="px-2 py-2 mx-4 cursor-pointer hover:border-b-3 hover:border-b-[#181818]" >Editor</p>
-                        <p className="px-2 py-2 mx-4 cursor-pointer hover:border-b-3 hover:border-b-[#181818]" >Docs</p>
-                        <p className="px-2 py-2 mx-4 cursor-pointer hover:border-b-3 hover:border-b-[#181818]" >Contact us</p>
-                        <p className="px-2 py-2 mx-4 cursor-pointer hover:border-b-3 hover:border-b-[#181818]" >Pricing</p>
+                        <Link href="/">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer text-black font-bold ${pathName.includes("/") && page == "landing" ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#000] hover:border-b-3"} `} >Home</p>
+                        </Link>
+                        <Link href="/home">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer text-black font-bold ${pathName.includes("home") ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#000] hover:border-b-3"} `} >Editor</p>
+                        </Link>
+                        <Link href="">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer text-black font-bold ${pathName.includes("github") ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#000] hover:border-b-3"} `} >Docs</p>
+                        </Link>
+                        <Link href="/pricing">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer hover:border-b-3 text-black font-bold ${pathName.includes("pricing") ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#000]"} `} >Pricing</p>
+                        </Link>
+                        <Link href="">
+                            <p className={`px-2 py-2 mx-4 cursor-pointer text-black font-bold ${pathName.includes("t.me") ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#000] hover:border-b-3"} `} >Contact us</p>
+                        </Link>
                     </div>
                     <Link href={"/home"} className="cursor-pointer md:w-[10rem] w-[7rem] md:h-[3rem] h-[2rem] bg-[#1da1f2] text-white md:rounded-lg rounded-sm font-bold flex items-center justify-center md:text-normal text-sm">
                         <p>Register</p>

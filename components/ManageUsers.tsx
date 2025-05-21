@@ -46,8 +46,8 @@ function ManageUsers() {
 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <div className='md:px-4 md:py-2 px-2 py-1 flex bg-[#1da1f2] md:rounded-lg rounded-sm'>
-                <DialogTrigger><p className = "md:text-sm text-xs font-semibold text-white"> Users ({usersInRoom?.docs.length})</p></DialogTrigger>
+            <div className='md:px-4 md:py-2 px-2 py-2 flex bg-[#1da1f2] md:rounded-lg rounded-sm'>
+                <DialogTrigger><p className = "md:text-sm text-xs font-semibold text-white"> Users ({usersInRoom?.docs.length || 0})</p></DialogTrigger>
             </div>
             {/* <Button asChild variant={"outline"}>
             </Button> */}

@@ -33,7 +33,7 @@ function AvatarsContent() {
                     <TooltipProvider key={other?.id + i}>
                         <Tooltip>
                             <TooltipTrigger>
-                                <Avatar className="hover:z-50 border-2 border-black">
+                                <Avatar className="hover:z-50 border-2 border-gray-700">
                                     <AvatarImage src={other?.info.avatar} className=""/>
                                     <AvatarFallback>{other?.info.name}</AvatarFallback>
                                 </Avatar>
