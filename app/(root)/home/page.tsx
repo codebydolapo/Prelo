@@ -3,6 +3,7 @@
 import animationData from "./lottie_create.json";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
 
 const MyLottieComponent = () => {
   const animationRef = useRef(null);
@@ -37,6 +38,7 @@ const MyLottieComponent = () => {
 
 
 export default function HomePage() {
+  const { user } = useUser()
 
 
   return (
@@ -44,7 +46,11 @@ export default function HomePage() {
       <MyLottieComponent />
       <div className="flex flex-col items-center justify-around text-center space-y-3 px-2">
         <p className="font-extrabold md:text-3xl text-xl text-[#1da1f2] ">Hello there!</p>
-        <p className="font-medium text-[#000000be] md:text-base text-sm">Check the sidebar to begin creating or collaborating...</p>
+        {user ?
+          <p className="font-medium text-[#000000be] md:text-base text-sm">Check the sidebar to begin creating or collaborating...</p>
+          :
+          <p className="font-medium text-[#000000be] md:text-base text-sm">Sign in to begin creating or collaborating...</p>
+        }
       </div>
     </main>
   );
