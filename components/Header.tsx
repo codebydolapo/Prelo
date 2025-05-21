@@ -45,7 +45,7 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                     }
 
                     {/* <Breadcrumbs /> */}
-                    <div className='items-center justfy-around md:flex hidden'>
+                    <div className='items-center justfy-around md:flex hidden md:w-auto w-0'>
                         <Link href="/">
                             <p className={`px-2 py-2 mx-4 cursor-pointer text-white font-bold ${pathName.includes("/") && page == "landing" ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#fff] hover:border-b-3"} `} >Home</p>
                         </Link>
@@ -75,11 +75,11 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                     </div>
                 </div>
                 :
-                <div className='w-full h-full flex items-center justify-between md:px-4 px-2'>
+                <div className='items-center w-full flex justify-between md:px-4 px-2 '>
                     <Link href="/">
                         <Image alt="" src="/icons/prelo_logo.jpg" width={30} height={30} className='rounded-full md:size-8 size-6' />
                     </Link>
-                    <div className='flex items-center justfy-around '>
+                    <div className='items-center justfy-around md:flex hidden md:w-auto w-0 '>
                         <Link href="/">
                             <p className={`px-2 py-2 mx-4 cursor-pointer text-black font-bold ${pathName.includes("/") && page == "landing" ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#000] hover:border-b-3"} `} >Home</p>
                         </Link>
