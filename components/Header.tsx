@@ -29,7 +29,7 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                                 </Link>
                                 <div className=''>
                                     <h1 className='text-xs capitalize text-white font-semibold'>Hello,</h1>
-                                    <h1 className='md:text-xl capitalize text-[#1DA1F2] font-extrabold tracking-wider'>{`${user?.firstName}`}.</h1>
+                                    <h1 className='md:text-xl capitalize text-[#1DA1F2] font-extrabold tracking-wider'>{`${user?.firstName}`}</h1>
                                 </div>
                             </div>
                             :
@@ -45,7 +45,7 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                     }
 
                     {/* <Breadcrumbs /> */}
-                    <div className='items-center justfy-around md:flex hidden md:w-auto w-0'>
+                    <div className='flex items-center justify-around md:flex hidden md:w-auto w-0'>
                         <Link href="/">
                             <p className={`px-2 py-2 mx-4 cursor-pointer text-white font-bold ${pathName.includes("/") && page == "landing" ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#fff] hover:border-b-3"} `} >Home</p>
                         </Link>
@@ -75,7 +75,7 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                     </div>
                 </div>
                 :
-                <div className='items-center w-full flex justify-between md:px-4 px-2 '>
+                <div className='flex items-center w-full justify-between md:px-4 px-2 '>
                     <Link href="/">
                         <Image alt="" src="/icons/prelo_logo.jpg" width={30} height={30} className='rounded-full md:size-8 size-6' />
                     </Link>
@@ -97,7 +97,7 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                         </Link>
                     </div>
                     <Link href={"/home"} className="cursor-pointer md:w-[10rem] w-[7rem] md:h-[3rem] h-[2rem] bg-[#1da1f2] text-white md:rounded-lg rounded-sm font-bold flex items-center justify-center md:text-normal text-xs">
-                        <p>Register</p>
+                        <p>Sign up/in</p>
                         {/* <ArrowRightIcon className="md:size-6 size-4 text-white mx-2" /> */}
                     </Link>
                 </div>

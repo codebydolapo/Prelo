@@ -16,6 +16,7 @@ import { collectionGroup, query, where, DocumentData } from 'firebase/firestore'
 import { db } from '@/firebase'
 import SidebarOption from './SidebarOption'
 import { ChevronDown, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 // import { useParams } from 'next/navigation'
 
 
@@ -164,27 +165,45 @@ function Sidebar() {
 
 
     return (
-        
 
-                <div className='pl-0 p-2 md:p-5 md:pr-2 md:pl-2 flex flex-col justify-start items-start bg-white'>
-                    <div className='md:hidden'>
-                        <Sheet>
-                            <SheetTrigger>
-                                <MenuIcon className='p-2 hover:opacity-30 rounded-lg' size={40} />
-                            </SheetTrigger>
-                            <SheetContent side={"left"}>
-                                <SheetHeader>
-                                    <SheetTitle>Menu</SheetTitle>
-                                    {menuOptions}
-                                </SheetHeader>
-                            </SheetContent>
-                        </Sheet>
-                    </div>
-                    <div className='hidden md:inline md:px-4'>
-                        {menuOptions}
-                    </div>
-                </div>
-           
+
+        <div className='pl-0 p-2 md:p-5 md:pr-2 md:pl-2 flex flex-col justify-start items-start bg-white'>
+            <div className='md:hidden relative'>
+                <Sheet>
+                    <SheetTrigger>
+                        <MenuIcon className='p-2 hover:opacity-30 rounded-lg' size={40} />
+                    </SheetTrigger>
+                    <SheetContent side={"left"}>
+                        <SheetHeader>
+                            <SheetTitle>Menu</SheetTitle>
+                            {menuOptions}
+                            <div className='flex items-center justify-around absolute bottom-3 self-center w-full font-extralight text-[#1da1f2]'>
+                                <Link href="/">
+                                    <p className={`text-[0.8rem] `} >Home</p>
+                                </Link>
+                                <Link href="/home">
+                                    <p className={`text-[0.8rem]`} >Editor</p>
+                                </Link>
+                                <Link href="">
+                                    <p className={`text-[0.8rem]`} >Docs</p>
+                                </Link>
+                                <Link href="/pricing">
+                                    <p className={`text-[0.8rem]`}>Pricing</p>
+                                </Link>
+                                <Link href="">
+                                    <p className={`text-[0.8rem]`} >Contact</p>
+                                </Link>
+                            </div>
+                        </SheetHeader>
+                    </SheetContent>
+                </Sheet>
+            </div>
+            <div className='hidden md:inline md:px-4'>
+                {menuOptions}
+            </div>
+
+        </div>
+
 
     )
 }
