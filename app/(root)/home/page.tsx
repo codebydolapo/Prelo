@@ -1,17 +1,11 @@
 "use client"
 
-// import { ArrowLeftCircle } from "lucide-react";
 import animationData from "./lottie_create.json";
-import { useLottie } from "lottie-react";
-import { ArrowLeftCircle } from "lucide-react";
-// import { } from "lottie-web";
-import dynamic from 'next/dynamic';
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 const MyLottieComponent = () => {
-  // let animationRef = useRef<AnimationConfigWithPath<"svg"> | AnimationConfigWithData<"svg">>();
-  let animationRef = useRef<any>(null);
+  const animationRef = useRef(null);
 
   async function getLottie() {
     const lot = await import("lottie-web");
@@ -20,7 +14,7 @@ const MyLottieComponent = () => {
       autoplay: true,
       loop: true,
       animationData,
-      container: animationRef.current
+      container: animationRef.current!
     })
 
   }

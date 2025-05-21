@@ -1,7 +1,7 @@
 "use client"
 
 import { SignInButton, UserButton, useUser } from '@clerk/nextjs'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { SignedIn, SignedOut } from '@clerk/nextjs'
 // import Breadcrumbs from './Breadcrumbs'
 import Image from 'next/image'
@@ -13,10 +13,6 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
     const { user } = useUser()
 
     const pathName = usePathname()
-
-    // useEffect(() => {
-    //     console.log(page, pathName)
-    // },)
 
 
     return (

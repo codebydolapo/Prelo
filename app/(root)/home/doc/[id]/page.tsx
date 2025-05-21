@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import Document from '@/components/Document'
 import { useParams } from 'next/navigation';
 import { RoomProvider } from '@liveblocks/react';

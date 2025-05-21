@@ -1,19 +1,8 @@
 "use client"
 
-import { usePathname } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 function pricing() {
-
-    const pathName = usePathname()
-    const [page, setPage] = useState("")
-
-    useEffect(() => {
-
-        if(pathName == `/pricing`){
-            setPage("pricing")
-        }
-    })
 
 
     return (

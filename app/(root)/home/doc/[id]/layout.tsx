@@ -19,12 +19,12 @@ function DocLayout(
 
 
     return (
-        // <AuthWrapper>
-        //     {children}
-        // </AuthWrapper>
-         <>
+        <AuthWrapper>
             {children}
-        </>
+        </AuthWrapper>
+        //  <>
+        //     {children}
+        // </>
     );
 }
 

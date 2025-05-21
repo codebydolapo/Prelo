@@ -15,10 +15,9 @@ import { useUser } from '@clerk/nextjs'
 import { collectionGroup, query, where, DocumentData } from 'firebase/firestore'
 import { db } from '@/firebase'
 import SidebarOption from './SidebarOption'
-import { ChevronDown, ChevronUp, ChevronRight } from 'lucide-react'
-import { useParams } from 'next/navigation'
-import { RoomProvider } from '@liveblocks/react'
-import LiveBlocksProvider from './LiveBlocksProvider'
+import { ChevronDown, ChevronRight } from 'lucide-react'
+// import { useParams } from 'next/navigation'
+
 
 interface RoomDocument extends DocumentData {
     createdAt: string;
@@ -63,7 +62,7 @@ function Sidebar() {
         query(collectionGroup(db, `rooms`), where("userId", "==", userEmail))
     ))
 
-    const params = useParams<{ tag: string; item: string; id: string }>()
+    // const params = useParams<{ tag: string; item: string; id: string }>()
 
 
     useEffect(() => {

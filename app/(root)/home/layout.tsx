@@ -1,20 +1,8 @@
-import type { Metadata } from "next";
 // import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
 import { Toaster } from "@/components/ui/sonner"
-import { Poppins } from 'next/font/google'
 
-// const poppins = Poppins({
-//   subsets: ['latin'],
-//   weight: ['400', '500', '600', '700', "800", "900"]
-// })
-
-// export const metadata: Metadata = {
-//   title: "Prelo",
-//   description: "Work in progress",
-// };
 
 export default function HomeLayout({
   children,

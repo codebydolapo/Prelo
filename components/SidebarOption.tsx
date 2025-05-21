@@ -23,7 +23,7 @@ function SidebarOption({ href, id }: { href: string, id: string }) {
         const activity = href.includes(pathName) && pathName == `/home/doc/${id}`
         console.log(activity)
         setIsActive(activity)
-    }, [])
+    }, [href, id, pathName])
 
 
 
