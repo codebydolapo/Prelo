@@ -96,7 +96,7 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                             <p className={`px-2 py-2 mx-4 cursor-pointer text-black font-bold ${pathName.includes("t.me") ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#000] hover:border-b-3"} `} >Contact us</p>
                         </Link>
                     </div>
-                    <Link href={"/home"} className="cursor-pointer md:w-[10rem] w-[7rem] md:h-[3rem] h-[2rem] bg-[#1da1f2] text-white md:rounded-lg rounded-sm font-bold flex items-center justify-center md:text-normal text-sm">
+                    <Link href={"/home"} className="cursor-pointer md:w-[10rem] w-[7rem] md:h-[3rem] h-[2rem] bg-[#1da1f2] text-white md:rounded-lg rounded-sm font-bold flex items-center justify-center md:text-normal text-xs">
                         <p>Register</p>
                         {/* <ArrowRightIcon className="md:size-6 size-4 text-white mx-2" /> */}
                     </Link>
