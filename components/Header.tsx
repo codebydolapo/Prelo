@@ -45,7 +45,7 @@ function Header({ stripped, page }: { stripped: boolean, page: string }) {
                     }
 
                     {/* <Breadcrumbs /> */}
-                    <div className='flex items-center justify-around md:flex hidden md:w-auto w-0'>
+                    <div className='items-center justify-around md:flex hidden md:w-auto w-0'>
                         <Link href="/">
                             <p className={`px-2 py-2 mx-4 cursor-pointer text-white font-bold ${pathName.includes("/") && page == "landing" ? "border-b-[#1da1f2] border-b-3" : "hover:border-b-[#fff] hover:border-b-3"} `} >Home</p>
                         </Link>
