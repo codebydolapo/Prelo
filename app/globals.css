@@ -122,11 +122,13 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
-/* @layer base {
+@layer base {
   * {
-    @apply border-border outline-ring/50;
+    /* @apply border-border outline-ring/50; */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  body {
+  /* body {
     @apply bg-background text-foreground;
-  }
-} */
+  } */
+}

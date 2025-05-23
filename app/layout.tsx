@@ -21,7 +21,7 @@ export default function RootLayout({
     <ClerkProvider>
 
       <html lang="en"
-      className={poppins.className}
+      className={poppins.className }
       >
         <head />
         <body
